@@ -10,6 +10,77 @@
 
     <title>jPaginator - Remylab</title>
     
+    <!--[if lt IE 9]><script type="text/javascript" src="/js/css3-mediaqueries.js"></script><![endif]-->
+    <script type="text/javascript" src="/js/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.8.13.slider.min.js"></script>
+    <script type="text/javascript" src="jPaginator-min.js"></script>
+    
+    <script type="text/javascript">
+      function isNumeric(value) {
+        if (value == null || !value.toString().match(/^[-]?\d*\.?\d*$/)) return false;
+        return true;
+      }
+      // Initial call
+      $(document).ready(function(){
+      	$("#test1").jPaginator({
+                nbPages:54,
+                selectedPage:22,
+                overBtnLeft:'#test1_o_left',
+                overBtnRight:'#test1_o_right',
+                maxBtnLeft:'#test1_m_left',
+                maxBtnRight:'#test1_m_right',
+                minSlidesForSlider:5,
+                onPageClicked: function(a,num) {
+                    $("#page1").html("demo1 - page : "+num);
+                }
+      	});
+      
+      	$("#test2").jPaginator({
+              nbPages:42,
+              selectedPage:23,
+              nbVisible:6,
+              marginPx:4,
+              overBtnLeft:'#test2_o_left',
+              overBtnRight:'#test2_o_right',
+              maxBtnLeft:'#test2_m_left',
+              maxBtnRight:'#test2_m_right',
+              withAcceleration:false,
+              minSlidesForSlider:10,
+              onPageClicked: function(a,num) {
+                  $("#page2").html("demo2 - page : "+num);
+              }
+      	});
+      
+      	$("#test3").jPaginator({
+            nbPages:9999,
+            widthPx:39,
+            overBtnLeft:'#test3_o_left',
+            overBtnRight:'#test3_o_right',
+            maxBtnLeft:'#test3_m_left',
+            maxBtnRight:'#test3_m_right',
+        		coeffAcceleration:5,
+            onPageClicked: function(a,num) {
+                $("#page3").html("demo3 - page : "+num);
+            }
+      	});
+      
+        // code for the reset button
+        $("#resetdemo1").click(function(){
+            if ( !isNumeric($("#nbpages1").val()) ) return;
+            
+            $("#test1").trigger("reset",{
+                selectedPage:null,
+                nbVisible:6,
+                nbPages:$("#nbpages1").val(),
+                marginPx:8,
+                speed:1
+            });
+            $("#page1").html("demo1");
+        });
+      
+      });    
+    </script>
+    
     <script type="text/javascript" src="/js/ga.js"></script>
   </head>
 
@@ -29,10 +100,81 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3></h3>
+        <h3>toto</h3>
 
-        <p></p>
+        <p id="page1">demo1</p>
 
+        <!-- DEMO 1 -->
+        <div id="test1" >
+
+            <!-- optional left control buttons -->
+            <a id="test1_m_left"></a><div id="test1_o_left"></div>
+
+            <div class='paginator_p_wrap'>
+                <div class='paginator_p_bloc'>
+                    <!--<a class='paginator_p'></a> // page number : dynamically added -->
+                </div>
+            </div>
+
+            <!-- optional right control buttons -->
+            <div id="test1_o_right"></div><a id="test1_m_right"></a>
+
+
+            <!-- slider -->
+            <div class='paginator_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all'>
+                <a class='ui-slider-handle ui-state-default ui-corner-all' href='#'></a>
+            </div>
+
+        </div>
+        <input id="nbpages1" type="text" size=1 value="20" maxlength=3/><input id="resetdemo1" type="button" value="Reset options"/> (the slider will disappear
+        because the reset set nbPages to 20, nbVisible to 6, which mean 20/6 = 4 slides, or minSlidesForSlider = 5...)
+        
+        <!-- DEMO 2 -->
+        <div id="test2" style="position:relative;overflow:hidden;">
+
+            <!-- optional left control buttons-->
+            <a id="test2_m_left" class="jPaginatorMax"></a><div id="test2_o_left" class="jPaginatorOver"></div>
+
+            <div class='paginator_p_wrap'>
+                <div class='paginator_p_bloc'>
+                    <!--<a class='paginator_p'></a> // page number : dynamically added -->
+                </div>
+            </div>
+
+            <!-- optional right control buttons-->
+            <div id="test2_o_right" class="jPaginatorOver"></div><a id="test2_m_right" class="jPaginatorMax"></a>
+
+
+            <!-- slider -->
+            <div class='paginator_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all'>
+                <a class='ui-slider-handle ui-state-default ui-corner-all' href='#' ></a>
+            </div>
+
+        </div>
+        
+        <!-- DEMO 3 -->
+        <div id="test3">
+
+            <!-- optional left control buttons-->
+            <a id="test3_m_left" class="jPaginatorMax"></a><div id="test3_o_left" class="jPaginatorOver"></div>
+
+            <div class='paginator_p_wrap'>
+                <div class='paginator_p_bloc'>
+                    <!--<a class='paginator_p'></a> // page number : dynamically added -->
+                </div>
+            </div>
+
+            <!-- optional right control buttons-->
+            <div id="test3_o_right" class="jPaginatorOver"></div><a id="test3_m_right" class="jPaginatorMax"></a>
+
+
+            <!-- slider -->
+            <div class='paginator_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all'>
+                <a class='ui-slider-handle ui-state-default ui-corner-all' href='#'></a>
+            </div>
+
+        </div>
+        
       </section>
     </div>
 
