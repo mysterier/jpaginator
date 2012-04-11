@@ -1,13 +1,15 @@
 	/* must set border width with px */
 	.paginator_p {
+	    height:20px;
 		text-align:center;
 		float:left;
 		color:white;
 		background-color:#B7B7B7;
 		cursor:pointer;
-		padding:0 0 2px 0;
+        line-height:22px;
 	}
 	.paginator_p_bloc {
+        overflow:hidden;
 		position:relative;
 		width:3000px;
 	}

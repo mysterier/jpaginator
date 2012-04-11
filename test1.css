@@ -3,40 +3,40 @@
 		height:40px;
 	}
 	#test1_o_left {
-    width:22px; height:15px;
-    float:left;
-    background:url(img/btn_precedent.bmp);
-    margin:4px 4px 0 0;
+	    width:22px; height:15px;
+	    float:left;
+	    background:url(img/btn_precedent.bmp);
+	    margin:4px 4px 0 0;
 	}
 	#test1_o_right {
-    width:22px; height:15px;
-    float:left;
-    background:url(img/btn_suivant.bmp);
-    margin:4px 0 0 4px;
+	    width:22px; height:15px;
+	    float:left;
+	    background:url(img/btn_suivant.bmp);
+	    margin:4px 0 0 4px;
 	}
 	#test1_m_left {
-    cursor:pointer;
-    width:22px; height:15px;
-    float:left;
-    background:url(img/btn_precedent_max.bmp);
-    margin:4px 2px 0 0;
+	    cursor:pointer;
+	    width:22px; height:15px;
+	    float:left;
+	    background:url(img/btn_precedent_max.bmp);
+	    margin:4px 2px 0 0;
 	}
 	#test1_m_right {
-    cursor:pointer;
-    width:22px; height:15px;
-    float:left;
-    background:url(img/btn_suivant_max.bmp);
-    margin:4px 0 0 2px;
+	    cursor:pointer;
+	    width:22px; height:15px;
+	    float:left;
+	    background:url(img/btn_suivant_max.bmp);
+	    margin:4px 0 0 2px;
 	}
 	/* must set border width with px */
 	#test1 .paginator_p {
-	  width:25px;
+		width:25px;
 		height:18px;
 		font-weight:bold;
 		color: #007edf;
 		background-color:transparent;
 		border:none;
-		padding:0 0 3px 0;
+		line-height:20px;
 	} 
 	#test1 .paginator_p_bloc {
 	}
